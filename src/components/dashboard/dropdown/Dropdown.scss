@@ -1,0 +1,80 @@
+@import '../../../styles/colors.scss';
+
+.dropdown {
+  position: absolute;
+  background: $white;
+  right: 0;
+  top: 150%;
+  min-width: 300px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  white-space: nowrap;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  max-height: 400px;
+  color: $foreground;
+  z-index: 1;
+  cursor: default;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+}
+
+.dropdownItem {
+  cursor: pointer;
+  z-index: 2;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  transition: color, 0.2s;
+  padding: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    color: $active;
+  }
+}
+
+.dropdownItemActive {
+  background: rgba($active, 0.6);
+  color: $black;
+
+  &:hover {
+    color: $black;
+  }
+}
+
+.dropdownNoData {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  svg {
+    g {
+      fill: $foreground !important;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .dropdown {
+    right: unset;
+    margin-left: -160%;
+  }
+}

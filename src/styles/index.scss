@@ -1,0 +1,276 @@
+// FONTS STYLES
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import './colors.scss';
+
+// MAIN STYLES
+* {
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba($active, 0.7);
+
+    &:hover {
+      background: $active;
+    }
+  }
+}
+
+a {
+  color: $active;
+  text-decoration: none;
+  transition: color, 0.2s;
+
+  &:hover {
+    color: $black;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: $background;
+  color: $foreground;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  width: 90vw;
+  margin: 0 auto;
+
+  // table full width
+  .tableWrapper {
+    width: 100vw;
+    margin-bottom: 40px;
+    margin-left: -5vw;
+  }
+}
+
+.content {
+  padding-top: 40px;
+}
+
+// FORM STYLES
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  background: $background;
+  min-width: 320px;
+  flex-grow: 0;
+  border-radius: 5px;
+
+  .formItem {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+
+    input,
+    select {
+      width: 100%;
+    }
+  }
+}
+
+.fromError {
+  color: $active;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.formHeader {
+  h1 {
+    margin-bottom: 0;
+  }
+  margin-bottom: 30px;
+}
+
+.formItem {
+  margin-bottom: 20px;
+}
+
+.formFooter,
+.formItemButtons {
+  margin-top: 10px;
+}
+
+.formFooter {
+  margin-bottom: 40px;
+}
+
+input,
+select {
+  border: none;
+  padding: 10px;
+  outline: none;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  transition: box-shadow 0.2s;
+
+  &:focus {
+    box-shadow: 0px 5px 10px rgba(122, 89, 89, 0.15);
+  }
+}
+
+::placeholder {
+  color: $placeholder;
+}
+
+select.selectedDefault {
+  color: $placeholder;
+
+  &:focus {
+    color: $black;
+  }
+}
+
+button {
+  border: none;
+  background: $active;
+  padding: 10px;
+  min-width: 110px;
+  border-radius: 5px;
+  outline: none;
+  color: $white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+}
+
+.formItemButtons {
+  display: flex;
+  justify-content: space-around !important;
+  width: 100%;
+}
+
+.textButton {
+  color: $active;
+  transition: color, 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    color: $black;
+  }
+}
+
+// TABLES
+.tableWrapper {
+  overflow-x: auto;
+}
+
+table {
+  background: $white;
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+thead {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.08);
+}
+
+tr:nth-child(even) {
+  background-color: rgba($background, 0.5);
+}
+
+th,
+td {
+  min-width: 150px;
+  text-overflow: ellipsis;
+}
+
+th {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 20px 15px;
+}
+
+td {
+  padding: 30px 15px;
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 5vw;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 5vw;
+}
+
+.tableNoData {
+  background: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  height: 250px;
+
+  svg {
+    margin-right: 10px;
+    g {
+      fill: $foreground;
+    }
+  }
+}
+
+//code formating
+code {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.65rem;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+pre {
+  max-width: 600px;
+}
+
+@media (max-width: 500px) {
+  .formItemButtons {
+    flex-direction: column;
+    button {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    .tableWrapper {
+      margin-left: calc((-100vw + 1440px) / 2);
+    }
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: calc((100vw - 1440px) / 2);
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: calc((100vw - 1440px) / 2);
+  }
+}

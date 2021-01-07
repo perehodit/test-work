@@ -1,0 +1,68 @@
+@import '../../styles/colors.scss';
+
+.modalWrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba($black, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  padding: 20px 5%;
+  background: $white;
+  min-width: 320px;
+  border-radius: 5px;
+
+  .formItem {
+    width: 100%;
+  }
+
+  p {
+    margin-bottom: 40px;
+  }
+
+  form {
+    background: transparent;
+  }
+
+  input,
+  select {
+    background: $background;
+  }
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  h2 {
+    margin: 0;
+  }
+  .icon {
+    cursor: pointer;
+
+    g {
+      transition: fill 0.2s;
+    }
+
+    &:hover {
+      g {
+        fill: $active;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .modal {
+    form {
+      width: auto;
+    }
+  }
+}

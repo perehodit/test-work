@@ -1,0 +1,19 @@
+@import '../../../styles/colors.scss';
+
+.cardIconWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: $background;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardIcon {
+  max-width: 50px;
+  max-height: 50px;
+  object-fit: cover;
+  object-position: center;
+}

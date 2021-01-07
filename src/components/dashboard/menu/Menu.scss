@@ -1,0 +1,36 @@
+@import '../../../styles/colors.scss';
+
+.menu {
+  background: $white;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding-top: 3px;
+
+  .container {
+    display: flex;
+    height: 100%;
+  }
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border-bottom: 3px solid $white;
+  margin-right: 50px;
+  transition: color 0.2s;
+  color: $foreground;
+
+  &:hover {
+    cursor: pointer;
+    color: $active;
+  }
+}
+
+.menuActive {
+  color: $active;
+  font-weight: bold;
+  border-bottom: 3px solid $active;
+}

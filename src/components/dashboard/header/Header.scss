@@ -1,0 +1,70 @@
+@import '../../../styles/colors.scss';
+
+.header {
+  background: $background-dark;
+  color: $foreground-dark;
+  height: 60px;
+  .container {
+    height: 100%;
+  }
+}
+
+.headerInlineContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.headerControls {
+  display: flex;
+}
+
+.headerItem {
+  position: relative;
+  margin-right: 30px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.textWithIconActive {
+  color: $active;
+
+  svg {
+    g {
+      fill: $active !important;
+    }
+  }
+}
+
+.textWithIcon {
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+
+  svg {
+    margin-right: 5px;
+
+    g {
+      transition: fill, 0.2s;
+      fill: $foreground;
+    }
+  }
+
+  &:hover {
+    color: $active;
+    cursor: pointer;
+
+    svg {
+      g {
+        fill: $active;
+      }
+    }
+  }
+}
+
+.headerIcon {
+  height: 18px;
+}
