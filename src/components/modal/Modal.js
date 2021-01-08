@@ -18,7 +18,6 @@ const Modal = forwardRef((props, ref) => {
           <h2>{props.title}</h2>
           <Icon
             height="14px"
-            viewBox="0 0 329.26933 329"
             onClick={() => props.onClose()}
             name="close"
           ></Icon>

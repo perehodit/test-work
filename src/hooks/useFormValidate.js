@@ -29,5 +29,5 @@ export default function useFormValidate(object) {
     }
   }
 
-  return [validateError, setValidateError, validate];
+  return [validateError, validate];
 }

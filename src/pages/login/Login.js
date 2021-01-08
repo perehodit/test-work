@@ -16,7 +16,7 @@ function Login() {
     password: '',
   });
 
-  const [validateError, setValidateError, validate] = useFormValidate(user);
+  const [validateError, validate] = useFormValidate(user);
 
   if (isAuthenticated()) {
     return (

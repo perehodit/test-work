@@ -35,7 +35,7 @@ export default function UserForm(props) {
 
   const dispatch = useDispatch();
 
-  const [validateError, setValidateError, validate] = useFormValidate(user);
+  const [validateError, validate] = useFormValidate(user);
 
   function handleSubmit(event) {
     event.preventDefault();

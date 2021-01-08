@@ -39,7 +39,7 @@ const Dropdown = forwardRef((props, ref) => {
         })
       ) : (
         <span className="dropdownNoData">
-          <Icon viewBox="0 0 24 24" name="empty"></Icon>
+          <Icon name="empty"></Icon>
           <span>No data</span>
         </span>
       )}
